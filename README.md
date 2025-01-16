@@ -4,7 +4,7 @@
  This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception.
 
 ## Scraping Amazon Reviews
-The [`scraper.ipynb`](scraper/scraper.ipynb) notebook can be used to scrape reviews of a product on Amazon.
+The [`scraper.ipynb`](scraper/1-scraper.ipynb) notebook is used to scrape reviews of a product on Amazon.
 
 > [!CAUTION]
 > This code is intended for **educational and research purposes only**. The use of this code to scrape Amazon may violate their [Terms of Service](https://www.amazon.com/gp/help/customer/display.html?nodeId=508088) and could lead to legal consequences.
@@ -20,3 +20,9 @@ With a given filter configuration, Amazon limits the number of pages to $10. So 
 
 > [!IMPORTANT]
 > Amazon requires the user to be logged to view the reviews dedicated page. Therefore, you need to login with your browser and export your cookies, as a JSON file in the `/scraper` directory. I used [*Cookie-Editor*](https://cookie-editor.com/) to do so.
+
+## Reviews Text Extractor
+The [`cleaner.ipynb`](scraper/2-cleaner.ipynb) notebook is used downstream to the scraping algorithm to extract the text of the reviews from the `html` bodies. Using the handy *BeautifulSoup* library, the `HTML` bodies are parsed and the 10 reviews are extracted from each page. For each review sample, we store the title, the content, and the stars.
+
+> [!NOTE]
+> As previously noted, this operation is highly dependant from the Amazon HTML page code, which surely will change over time. Currently the pertinent fields are retrieved using the class of the parent of the `<span>` tag that contains the text.
