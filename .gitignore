@@ -1,2 +1,5 @@
 .env
 1-etl/cookies.json
+.vscode/
+3-topic_modeling/model_all.bertopic
+3-topic_modeling/model_all_2.bertopic

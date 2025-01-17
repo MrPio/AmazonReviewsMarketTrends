@@ -33,13 +33,13 @@ The [`ratings_over_time.ipynb`](2-data_visualization/1-ratings_over_time.ipynb) 
 From the monthly ratings plot, we can see that there are two peaks in the number of reviews in the months of January and December 2024. However, this doesn't necessarily mean that sales were particularly high during these periods, since the scraping process selected only the most relevant reviews, regardless of time uniformity.
 
 <p align="center">
-    <img width="625rem" src="img/monthly_ratings.png"></img>
+    <img width="575rem" src="img/monthly_ratings.png"></img>
 </p>
 
 When we stack the bars, we see that the polarization of reviews increases over time. This means that customers are strongly disagreeing with each other.
 
 <p align="center">
-    <img width="625rem" src="img/stars_distro.png"></img>
+    <img width="575rem" src="img/stars_distro.png"></img>
 </p>
 
 ## ☁️ Plotting Word Clouds
@@ -48,13 +48,13 @@ The The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook
 This serves as a preamble to the subsequent Topic Modeling analysis.
 
 <p align="center">
-    <img width="625rem" src="img/5-star_cloud.png"></img>
+    <img width="575rem" src="img/5-star_cloud.png"></img>
 </p>
 
 The most frequent words in the 5-star reviews are *easy, quality, price, new, in-time* and *office*
 
 <p align="center">
-    <img width="625rem" src="img/1-star_cloud.png"></img>
+    <img width="575rem" src="img/1-star_cloud.png"></img>
 </p>
 
 
