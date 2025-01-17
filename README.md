@@ -3,7 +3,7 @@
 
  This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception.
 
-## Scraping Amazon Reviews
+## ⛏️ Scraping Amazon Reviews
 The [`scraper.ipynb`](1-etl/1-scraper.ipynb) notebook is used to scrape reviews of a product on Amazon.
 
 > [!CAUTION]
@@ -21,7 +21,7 @@ With a given filter configuration, Amazon limits the number of pages to $10. So 
 > [!IMPORTANT]
 > Amazon requires the user to be logged to view the reviews dedicated page. Therefore, you need to login with your browser and export your cookies, as a JSON file in the `/1-etl` directory. I used [*Cookie-Editor*](https://cookie-editor.com/) to do so.
 
-## Reviews Text Extractor
+## 🧹 Reviews Text Extractor
 The [`cleaner.ipynb`](1-etl/2-cleaner.ipynb) notebook is used downstream to the scraping algorithm to extract the text of the reviews from the `html` bodies. Using the handy *BeautifulSoup* library, the `HTML` bodies are parsed and the 10 reviews are extracted from each page. For each review sample, we store the title, the content, and the stars.
 
 > [!NOTE]
