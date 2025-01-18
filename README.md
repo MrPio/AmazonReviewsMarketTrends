@@ -43,7 +43,7 @@ When we stack the bars, we see that the polarization of reviews increases over t
 </p>
 
 ## ☁️ Plotting Word Clouds
-The The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook aims to show the most common words in both the titles and the content of the reviews. First, we analyze the 5-star reviews to identify the aspects that customers appreciate the most. Then the same process is repeated for the 1-star reviews.
+The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook aims to show the most common words in both the titles and the content of the reviews. First, we analyze the 5-star reviews to identify the aspects that customers appreciate the most. Then the same process is repeated for the 1-star reviews.
 
 This serves as a preamble to the subsequent Topic Modeling analysis.
 
@@ -59,3 +59,29 @@ The most frequent words in the 5-star reviews are *easy, quality, price, new, in
 
 
 The most frequent words in the 1-star reviews are *ink, cartridges, waste, scam, disconnects, paper, setup, subscription, wifi, support* and *app*.
+
+## 🔥 Topic Modeling with [BERTopic](https://github.com/MaartenGr/BERTopic)
+The [`topic_modeling.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook performs the Topic Modeling task using BERTopic. The 500 collected reviews are clustered into semantically similar groups. From these clusters, topics are extracted and a probability distribution over the topics is calculated on the basis of the distances between the groups.
+
+### How BERTopic works
+unsupervised
+#### The embedding phase
+#### The dimensionality reduction phase
+#### The clustering phase
+#### The topic extraction phase
+
+### Preprocess
+<!-- 
+recenzioni lunghe = raggiungono tanti, poco veritiere, molto influenti  
+1 spanish no need for multiligual
+-->
+#### Splitting reviews into sentences
+#### Embedding with a sentence transformer
+
+### Postprocess
+#### Merging similiar topics
+#### Naming the topics
+
+### The results
+#### Calculating the topic distribution
+#### Visualizing the topics
