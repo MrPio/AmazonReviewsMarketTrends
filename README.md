@@ -79,6 +79,11 @@ The documents in the corpus — in our case, the 500 reviews — are encoded int
 
 One thing we should be aware of is the *Max Sequence Length* model attribute. If we have documents that are too long, the content will be truncated and potentially useful information will be lost. **So we can either split the documents into smaller documents** — That's what we did here — **or choose a larger model**.
 
+> [!TIP]
+> For my experience, I strongly recommend splitting large documents into sentences using a tokenizer such as `sent_tokenize` from `nltk`. This also has the advantage of naturally assigning multiple topics to a large document.
+
+Another aspect to take into account is the language. If our corpus contains a lot a significant amount of words or even entire documents in a non-english language, we should use a multi-lingual model, like [`paraphrase-multilingual-mpnet-base-v2`](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2). However, this is not the case in this project because we scraped the reviews from Amazon US.
+
 We chose [`all-mpnet-base-v2`](https://huggingface.co/sentence-transformers/all-mpnet-base-v2). It encodes documents along 768 dimensions and it's one of the best performing models.
 
 #### The dimensionality reduction phase
@@ -97,31 +102,44 @@ Now that the embedding dimensions have been reduced, documents are clustered by 
     <img width="475rem" src="img/hdbscan_vs_dbscan.png"></img>
 </p>
 
-
 #### The topic extraction phase
 Once the clusters have been determined, we need to interpret them. The set of documents contained in each cluster makes the model of a density-based clustering algorithm, but we can't understand what the topics are just by looking at the points, since **we ignore the meaning of the reduced embedding space**.
 
-This phase is articulated in two steps: *tokenization of topics* and *weighting of tokens*. Tokenize the clusters means to extract words, or n-grams from their documents. 
+This phase is articulated in three steps: *tokenization of topics*, *weighting of tokens* and *keywords extraction*. Here we assume that the *Bag of Word* embedding is used for the 1st phase, while the *TF-IDF* is used for the 2nd phase and *KeyBERT* is used for the 3rd. Tokenize the clusters means to extract words, or n-grams from their documents. 
 
 > [!TIP]
 > The `n_gram_range` attribute of `BERTopic` can be used to use n-grams instead of single words to define a topic. This can be very useful in terms of interpretability.
 
-This way, the document-term matrix is built.
+This way, the document-term matrix (DTM) is built.
 
 > [!NOTE]
 > *LDA* builds the document-term matrix in the same way. The difference is that in *BERTopic* this is done after identifying the topics in order to interpret them, while in *LDA* it is done in order to find them.
 
+Once the DTM has been extracted, *TF-IDF* is used to adjust the token frequencies to reflect the importance of tokens within a topic, relative to the overall corpus. Actually, *c-TF-IDF*, a variant of the classic *TF-IDF*, is used here. In essence, ***c-TF-IDF* is an application of *TF-IDF* to the union of all the documents in a cluster** — the *meta-document*. This makes sense, since we are looking for n-grams that distinguish a topic, not a document, from all other topics.
 
+> [!NOTE]
+> *TF-IDF* gives weight to more frequent words than to less frequent ones, but excludes very common words on the assumption that they are most likely stop words, such as articles and prepositions.
 
-### Preprocess
-<!-- 
-recenzioni lunghe = raggiungono tanti, poco veritiere, molto influenti  
-1 spanish no need for multiligual
--->
-#### Splitting reviews into sentences
-#### Embedding with a sentence transformer
+Finally, *KeyBERT* is used to ensure that the selected n-grams are not only relevant in TF-IDF terms, but also semantically meaningful with respect to the *meta-document*.
 
-### Postprocess
+<p align="center">
+    <img width="600rem" src="img/KeyBERT.png"></img>
+</p>
+
+#### The post-processing phase
+This is where the unsupervised algorithm ends. The user should now polish the results by *naming*, *reducing*, *merging*, and *visualizing* topics. BERTopic has several amazing tools for interpreting the results. We will use some of them in the following.
+
+### Pre-processing
+Before feeding the 500 collected reviews into *BERTopic*, we should consider a few issues.
+- **Long 5-star reviews are sometimes paid**. We could solve this problem by filtering out 5-star reviews that are longer than a certain number of words. However, since the goal of the analysis is to determine which aspects of a product drive overall customer perception, and since we selected the most influential reviews, we decided to ignore this fact.
+- **Some reviews are very long**. We solved this problem by splitting all the reviews into sentences. The original dataset of 500 reviews became a dataset of 2821 sentences.
+<p align="center">
+    <img width="700rem" src="img/length_distribution.png"></img>
+</p>
+
+- **Some of the reviews are outliers**. In the datasets there were a few amount of reviews that were removed. As shown in the previous figure, 14 reviews are shorter than 20 characters and were safely removed. In addition, there was one Spanish review that caused the BERTopic model to define a cluster just for it, since an English-only tokenizer was chosen.
+
+### Post-processing
 #### Merging similiar topics
 #### Naming the topics
 
