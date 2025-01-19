@@ -1,0 +1,875 @@
+{
+    "Topic": {
+        "0": -1,
+        "1": 0,
+        "2": 1,
+        "3": 2,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 6,
+        "8": 7,
+        "9": 8,
+        "10": 9,
+        "11": 10,
+        "12": 11,
+        "13": 12,
+        "14": 13,
+        "15": 14,
+        "16": 15,
+        "17": 16,
+        "18": 17,
+        "19": 18,
+        "20": 19,
+        "21": 20,
+        "22": 21,
+        "23": 22,
+        "24": 23,
+        "25": 24,
+        "26": 25,
+        "27": 26,
+        "28": 27,
+        "29": 28,
+        "30": 29,
+        "31": 30,
+        "32": 31,
+        "33": 32,
+        "34": 33,
+        "35": 34,
+        "36": 35,
+        "37": 36,
+        "38": 37,
+        "39": 38,
+        "40": 39
+    },
+    "Count": {
+        "0": 1325,
+        "1": 124,
+        "2": 122,
+        "3": 101,
+        "4": 96,
+        "5": 95,
+        "6": 83,
+        "7": 78,
+        "8": 74,
+        "9": 60,
+        "10": 52,
+        "11": 49,
+        "12": 47,
+        "13": 44,
+        "14": 30,
+        "15": 27,
+        "16": 22,
+        "17": 22,
+        "18": 21,
+        "19": 20,
+        "20": 20,
+        "21": 20,
+        "22": 20,
+        "23": 19,
+        "24": 19,
+        "25": 19,
+        "26": 18,
+        "27": 18,
+        "28": 17,
+        "29": 17,
+        "30": 16,
+        "31": 15,
+        "32": 15,
+        "33": 14,
+        "34": 13,
+        "35": 13,
+        "36": 12,
+        "37": 12,
+        "38": 11,
+        "39": 11,
+        "40": 10
+    },
+    "Name": {
+        "0": "-1_the_printer_to_it",
+        "1": "0_hp_with_support_and",
+        "2": "1_set_set up_easy_up",
+        "3": "2_ink_hp_the_you",
+        "4": "3_wifi_to_my_the",
+        "5": "4_tray_paper_paper tray_the paper",
+        "6": "5_service_customer_customer service_he",
+        "7": "6_print_slow_to print_printer",
+        "8": "7_quality_print quality_quality is_print",
+        "9": "8_subscription_ink_the subscription_the",
+        "10": "9_return_it_return it_wish could",
+        "11": "10_scan_scanning_to scan_page",
+        "12": "11_buy_would_price_recommend",
+        "13": "12_free_free ink_ink_months",
+        "14": "13_have tried_uninstalling_tried_troubleshooting",
+        "15": "14_8015e_8010e_8010_series",
+        "16": "15_not worth_waste_waste of_worth",
+        "17": "16_scan_to_hp smart_smart",
+        "18": "17_saturday_the agent_agent_shipping",
+        "19": "18_but six_fixed my_geesh wow_geesh",
+        "20": "19_disappointed_am so_am_surprise",
+        "21": "20_pages_print_pages in_dont print",
+        "22": "21_screen_touch screen_touch_the touch",
+        "23": "22_works_it_worked_it works",
+        "24": "23_brand_better_different brand_chosen",
+        "25": "24_frustrating_very frustrating_very_experience",
+        "26": "25_recommend this_do not_not buy_not recommend",
+        "27": "26_fax_receive_to fax_but occasionally",
+        "28": "27_flimsy_sturdy_known_very flimsy",
+        "29": "28_stars_star_give_stars is",
+        "30": "29_jam_jams_paper jam_paper",
+        "31": "30_home_home office_office_my home",
+        "32": "31_issues_problems_but issues_nothing",
+        "33": "32_print from_phone_my phone_from",
+        "34": "33_headaches_cost_money_also save",
+        "35": "34_worst printer_worst_hate_ever",
+        "36": "35_cartridge_low_new_ink",
+        "37": "36_more features_wanted_and needed_needed",
+        "38": "37_with apple_my phone_phone_apple",
+        "39": "38_envelopes_printing envelopes_word_printing",
+        "40": "39_that he_he_said that_this was"
+    },
+    "CustomName": {
+        "0": "outliers",
+        "1": "support",
+        "2": "set up",
+        "3": "ink and cartridge",
+        "4": "wifi and connection",
+        "5": "paper tray",
+        "6": "customer service",
+        "7": "print time",
+        "8": "quality",
+        "9": "subscription",
+        "10": "will return",
+        "11": "scanner",
+        "12": "price",
+        "13": "free ink",
+        "14": "uninstalling",
+        "15": "8015",
+        "16": "waste",
+        "17": "smart",
+        "18": "shipping",
+        "19": "*surprise",
+        "20": "disappointed ",
+        "21": "pages",
+        "22": "touch screen",
+        "23": "works great",
+        "24": "other brands",
+        "25": "frustrating ",
+        "26": "not recommend",
+        "27": "fax",
+        "28": "flimsy\/sturdy",
+        "29": "give stars",
+        "30": "jams",
+        "31": "at home",
+        "32": "lot of issues",
+        "33": "print with phone",
+        "34": "headaches",
+        "35": "worst printer, hate",
+        "36": "low cartridge",
+        "37": "wanted features",
+        "38": "Apple users",
+        "39": "printing envelopes",
+        "40": "customer service problems"
+    },
+    "Representation": {
+        "0": [
+            "the",
+            "printer",
+            "to",
+            "it",
+            "and",
+            "this",
+            "hp",
+            "for",
+            "is",
+            "have"
+        ],
+        "1": [
+            "hp",
+            "with",
+            "support",
+            "and",
+            "with hp",
+            "hp and",
+            "to",
+            "amazon",
+            "as",
+            "my"
+        ],
+        "2": [
+            "set",
+            "set up",
+            "easy",
+            "up",
+            "to set",
+            "easy to",
+            "setup",
+            "to",
+            "was",
+            "printer"
+        ],
+        "3": [
+            "ink",
+            "hp",
+            "the",
+            "you",
+            "to",
+            "cartridges",
+            "for",
+            "and",
+            "cartridge",
+            "instant ink"
+        ],
+        "4": [
+            "wifi",
+            "to",
+            "my",
+            "the",
+            "it",
+            "my wifi",
+            "wireless",
+            "connect",
+            "the printer",
+            "connection"
+        ],
+        "5": [
+            "tray",
+            "paper",
+            "paper tray",
+            "the paper",
+            "the",
+            "slide",
+            "to",
+            "tray is",
+            "that",
+            "top"
+        ],
+        "6": [
+            "service",
+            "customer",
+            "customer service",
+            "he",
+            "me",
+            "call",
+            "they",
+            "my",
+            "to",
+            "my computer"
+        ],
+        "7": [
+            "print",
+            "slow",
+            "to print",
+            "printer",
+            "it",
+            "the",
+            "takes",
+            "and",
+            "the printer",
+            "to"
+        ],
+        "8": [
+            "quality",
+            "print quality",
+            "quality is",
+            "print",
+            "prints",
+            "the print",
+            "is",
+            "the",
+            "and",
+            "color"
+        ],
+        "9": [
+            "subscription",
+            "ink",
+            "the subscription",
+            "the",
+            "for",
+            "canceled",
+            "instant ink",
+            "paid",
+            "instant",
+            "cancelled"
+        ],
+        "10": [
+            "return",
+            "it",
+            "return it",
+            "wish could",
+            "wish",
+            "this",
+            "could return",
+            "and",
+            "the trash",
+            "different"
+        ],
+        "11": [
+            "scan",
+            "scanning",
+            "to scan",
+            "page",
+            "sided",
+            "you",
+            "document",
+            "scanner",
+            "to",
+            "do"
+        ],
+        "12": [
+            "buy",
+            "would",
+            "price",
+            "recommend",
+            "buy it",
+            "would not",
+            "again",
+            "money",
+            "purchase",
+            "definitely buy"
+        ],
+        "13": [
+            "free",
+            "free ink",
+            "ink",
+            "months",
+            "months free",
+            "the",
+            "the free",
+            "months of",
+            "six",
+            "of"
+        ],
+        "14": [
+            "have tried",
+            "uninstalling",
+            "tried",
+            "troubleshooting",
+            "to",
+            "uninstalling and",
+            "tried uninstalling",
+            "and reinstalling",
+            "uninstall",
+            "uninstall and"
+        ],
+        "15": [
+            "8015e",
+            "8010e",
+            "8010",
+            "series",
+            "bought",
+            "the",
+            "model",
+            "the 8010",
+            "8015",
+            "is the"
+        ],
+        "16": [
+            "not worth",
+            "waste",
+            "waste of",
+            "worth",
+            "garbage",
+            "worth the",
+            "time",
+            "piece of",
+            "and time",
+            "is absolute"
+        ],
+        "17": [
+            "scan",
+            "to",
+            "hp smart",
+            "smart",
+            "to scan",
+            "scanning",
+            "the hp",
+            "hp",
+            "software",
+            "you"
+        ],
+        "18": [
+            "saturday",
+            "the agent",
+            "agent",
+            "shipping",
+            "amazon",
+            "day",
+            "was",
+            "received",
+            "packaged",
+            "on time"
+        ],
+        "19": [
+            "but six",
+            "fixed my",
+            "geesh wow",
+            "geesh",
+            "gosh",
+            "gosh unbelievable",
+            "not twice",
+            "my gosh",
+            "returning wth",
+            "unbelievable"
+        ],
+        "20": [
+            "disappointed",
+            "am so",
+            "am",
+            "surprise",
+            "im",
+            "wrong",
+            "done",
+            "this",
+            "actually it",
+            "losses im"
+        ],
+        "21": [
+            "pages",
+            "print",
+            "pages in",
+            "dont print",
+            "color",
+            "printed",
+            "dont",
+            "200 pages",
+            "only printed",
+            "lot of"
+        ],
+        "22": [
+            "screen",
+            "touch screen",
+            "touch",
+            "the touch",
+            "screen is",
+            "larger",
+            "like the",
+            "display",
+            "the",
+            "big"
+        ],
+        "23": [
+            "works",
+            "it",
+            "worked",
+            "it works",
+            "works great",
+            "but",
+            "it worked",
+            "and",
+            "when",
+            "up"
+        ],
+        "24": [
+            "brand",
+            "better",
+            "different brand",
+            "chosen",
+            "have chosen",
+            "one from",
+            "better quality",
+            "for better",
+            "quality",
+            "from amazon"
+        ],
+        "25": [
+            "frustrating",
+            "very frustrating",
+            "very",
+            "experience",
+            "so frustrating",
+            "me very",
+            "all around",
+            "pain",
+            "around",
+            "be very"
+        ],
+        "26": [
+            "recommend this",
+            "do not",
+            "not buy",
+            "not recommend",
+            "recommend",
+            "printer do",
+            "this printer",
+            "buy",
+            "this",
+            "buy this"
+        ],
+        "27": [
+            "fax",
+            "receive",
+            "to fax",
+            "but occasionally",
+            "key features",
+            "faxes",
+            "receive fax",
+            "receive faxes",
+            "send and",
+            "scan fax"
+        ],
+        "28": [
+            "flimsy",
+            "sturdy",
+            "known",
+            "very flimsy",
+            "parts",
+            "very",
+            "to be",
+            "be",
+            "overall",
+            "pretty"
+        ],
+        "29": [
+            "stars",
+            "star",
+            "give",
+            "stars is",
+            "three stars",
+            "rate",
+            "stars for",
+            "rating",
+            "star rating",
+            "it stars"
+        ],
+        "30": [
+            "jam",
+            "jams",
+            "paper jam",
+            "paper",
+            "jammed",
+            "time",
+            "over",
+            "and over",
+            "over and",
+            "single time"
+        ],
+        "31": [
+            "home",
+            "home office",
+            "office",
+            "my home",
+            "quiet",
+            "office quiet",
+            "everything need",
+            "home use",
+            "for home",
+            "for"
+        ],
+        "32": [
+            "issues",
+            "problems",
+            "but issues",
+            "nothing",
+            "had",
+            "issues with",
+            "no",
+            "nothing but",
+            "no issues",
+            "reviews"
+        ],
+        "33": [
+            "print from",
+            "phone",
+            "my phone",
+            "from",
+            "print",
+            "from my",
+            "my",
+            "cool",
+            "phones",
+            "to print"
+        ],
+        "34": [
+            "headaches",
+            "cost",
+            "money",
+            "also save",
+            "benefit for",
+            "and headache",
+            "and resources",
+            "and pleasure",
+            "someone money",
+            "pleasure maybe"
+        ],
+        "35": [
+            "worst printer",
+            "worst",
+            "hate",
+            "ever",
+            "the worst",
+            "ever owned",
+            "printer",
+            "have ever",
+            "literally",
+            "one of"
+        ],
+        "36": [
+            "cartridge",
+            "low",
+            "new",
+            "ink",
+            "cartridges",
+            "was low",
+            "the new",
+            "of them",
+            "that the",
+            "had"
+        ],
+        "37": [
+            "more features",
+            "wanted",
+            "and needed",
+            "needed",
+            "home",
+            "and",
+            "printer with",
+            "features",
+            "printer",
+            "work"
+        ],
+        "38": [
+            "with apple",
+            "my phone",
+            "phone",
+            "apple",
+            "my",
+            "air print",
+            "recognized it",
+            "automatically recognized",
+            "air",
+            "recognized"
+        ],
+        "39": [
+            "envelopes",
+            "printing envelopes",
+            "word",
+            "printing",
+            "within word",
+            "word for",
+            "of envelopes",
+            "with",
+            "print on",
+            "hp customer"
+        ],
+        "40": [
+            "that he",
+            "he",
+            "said that",
+            "this was",
+            "said",
+            "printer",
+            "just",
+            "that",
+            "carefully pick",
+            "case with"
+        ]
+    },
+    "Representative_Docs": {
+        "0": [
+            "If you don't print much this printer is not for you because you have to have a monthly subscription for paper.",
+            "Why did it have to do it when you wanted to print something?I just bought this model (8015e) because, for the price, these printers are great for home AND office use, AND because I already had 2 brand new sets of ink cartridges stocked up that weren't cheap and I didn't want to just toss them.",
+            "It is by no means a work horse I hardly ever use it between that and the app that you have to use to use it and it's constant disconnecting and not sending information to get your instant ink and then the customer service I don't even want to go into that, HP you have fallen from Grace"
+        ],
+        "1": [
+            "I spent literal hours on the laptop with hp support, which resulted in exactly no actual help.",
+            "I spent literal hours on the phone with hp support, which resulted in exactly NO actual help.",
+            "Nope, they want you to go to 123.HP to then get an installer which gave me two errors and had to system restore to get the Hook out of my O.S to throw it in the trash as the version it gave me at the site says my O.S is not new enough albeit Win7 SvcPk1 that is a Minimum.I will take a day off as computers are such a time suck for something that was supposed to be a time saver."
+        ],
+        "2": [
+            "This printer is easy to set up.",
+            "This was easy to set up and the free ink program was easy to set up!",
+            "Easy to set up."
+        ],
+        "3": [
+            "I paid for instant ink for months and everything ran smoothly.Then, for no apparent reason, I'd go to use the printer one day and the touchscreen would just say \"cartridge cannot be used until printer is enrolled in HP instant ink\" ...even though the instant ink subscription was still very much current and active.",
+            "I cancelled the Instant Ink and I have a week to buy ink (even though the cartridges in the printer are about 80% full) because they're going to not let the printer use those cartridges...which in a way doesn't matter since I can't use the printer anyway, but still, very wasteful and insecure of them.Anyway, there's a bunch of other printers out there, so why add extra stress in your life by buying an HP who want you for your Instant Ink subscription and not because they want to bring happiness into your life when you can provide your kids a fun coloring sheet in 1 minute.",
+            "I went to the HP ink web page and canceled my $5.99 a month subscription ( a week later they sent me an email informing me that the price was increased to $6.99 a month), and that is when I was informed that if I cancel my ink subscription my printer cartridges will be turned off, and now my \"free\" ink is USELESS and my printer will not print until I replace the full ink cartridges, and a new set of cartridges for the printer will cost About $85.00UpdateAfter I replaced all of the ink cartridges, and turned my printer back on again it said it needed to be set up again."
+        ],
+        "4": [
+            "But since this one is STILL NOT in wifi connection mode (and again, not giving ANY way to do that from the printer) the app can't find the printer, won't connect using wifi direct printing, won't offer me any other options from the app OR the printer screen.So, now it's Christmas.",
+            "The printer wouldn't allow me to set up and connect it to my wifi.",
+            "When I asked the rep how weak signal would cause the printer to lose its IP address, he could not answer the question but insisted that I would need to get up from my desk with my Wi-Fi connected computer on it and walk into the next room to turn on my printer, then walk back to my desk with my Wi-Fi connected computer on it to send the print job to the printer, and again walk back to the printer to retrieve the printed documents from the printer that is nice and comfy snuggled in right next to my Wi-Fi router.Now when I turn my new Brother printer on it says ready to print every time."
+        ],
+        "5": [
+            "The only thing I don\u2019t like is the paper tray.",
+            "So if you insert the paper tray, you have to insert it rather slowly or the paper will slide back in the tray and the rollers will not pick up the paper.",
+            "Push the paper tray back in."
+        ],
+        "6": [
+            "When calling customer support they immediately wanted to take over my computer to try to find the issue at first I objected and it took three calls before I finally conceive it so I let them go into my computer and they come back and say that my IP address has been compromised.",
+            "Once again I am unable to print anything.It is very hard to take customer service reps and their supervisors seriously when they contradict themselves don't listen to you and don't execute on their promises.In general, I think they have a serious attitude problem in customer service.",
+            "He then told me my computer was corrupted so that's why my printer wasn't working  and wanted to sell me software to take care of it and he would run it on my computer for me."
+        ],
+        "7": [
+            "memories insufficient on the printer it takes forever to print and process image and color",
+            "It also forgets everything you set up regularly and I have had to reset it up several times and this most recent time it still won\u2019t print because it says the printer is busy and it thinks it is a different printer with the same name.",
+            "The printing itself works fine once the printer actually starts printing but the time it takes to \"queue\" up or whatever the printer is doing when making tons of noise is about 1 minute per print job."
+        ],
+        "8": [
+            "The print quality is not very good on this one.",
+            "The print quality is low.",
+            "The print quality is fine."
+        ],
+        "9": [
+            "I canceled the subscription and was told I would have to buy non-subscription cartridges even though I had plenty of ink left in the subscription ones.",
+            "Lastly, I canceled the Instant Ink subscription since we had the 2nd ink cartridges that came with the 2nd printer and then 1 set that came out from the subscription.",
+            "I reenrolled in instant ink to print one page and did the lowest monthly amount because I was told otherwise I would need to go purchase different ink cartridges at the store that were not the instant ink brand even though these were the almost completely full cartridges that came with the printer.Since I reenrolled and paid the monthly fee, I decided to print some things at home that I needed for the next week of school in my classroom and I went over my \"monthly subscription\" limit so I got an email stating that every XX number of pages I went over that I would be charged an additional $1.00 each month."
+        ],
+        "10": [
+            "Very disappointed in this and wish I could return it.",
+            "I wish I could return it or exchange it for a different model.",
+            "I wish I could return it!!"
+        ],
+        "11": [
+            "The duplex function is useless: When trying to use the scanner to reproduce a document with double sided print, it will scan both sides but the copies or scans it produces are single sided.... why?",
+            "Main pain point is the double sided scanning, which you do have to manually flip over each page just to scan both sides.",
+            "Scanning is one-page-at-a-time so if you have a three page document you want to scan, you have to scan individual pages and you'll end up with 3 docs on your computer:  Page 1, Page 2 & Page 3."
+        ],
+        "12": [
+            "Would definitely buy again.",
+            "Would definitely buy again.",
+            "Can anyone tell me what this is and where to buy it, hopefully on Amason.Thanks in advance for your help."
+        ],
+        "13": [
+            "But it is advertizing 6 months of free ink when in reality the Instant Ink sheet that came with the printer only shows 3 months.",
+            "The 6 months free ink is NOT AUTOMATIC...you must request it but this is not evident until you get a message from HP showing you have two months free ink.",
+            "FREE ink for 6 months?"
+        ],
+        "14": [
+            "However it keeps going off line  I guess its a setting I need to change and do notknow how to do it so have to set aside the time to let tech support log int my computer to change it for me.",
+            "I have tried uninstalling and reinstalling and still does not work.",
+            "I have tried uninstalling and reinstalling drivers to no avail."
+        ],
+        "15": [
+            "This is the 3rd one I have bought (8010, 8020, and this one is the 8015e).",
+            "It's a SERIES issue considering the main marketing focus for your product HP 8010e Series is THE WIFI PRINTING.Now, I bought this for scanning.",
+            "I follow the directions, my computer would not recognize the printer.My wife called customer service, her computer would not recognize the printer.My wife finally got the PIN to show up has required, so I tried to print; my printer could not find my 8015e, but it accepted the 8010.However, after installing the 8010 hardware, the printer reads as offline even though it's on.Obviously it's being returned.In summation, caveat emptor, this product is entirely problematic."
+        ],
+        "16": [
+            "Definitely not worth the time I have wasted on it.",
+            "Huge waste of ink and time.",
+            "A complete waste of money and time."
+        ],
+        "17": [
+            "The printer DOES NOT recognize my laptop when attempting to scan from the hardware and the HP Smart app either takes forever to (literal hours per day) to be able to print a PDF doc type ONLY or cannot access the printer's print or scan functions whatsoever.",
+            "Unlike my prior HP (8610) which allowed me to select scan on the touch screen to scan and save document to a local drive, this model (8015) requires you to open the HP application on your Mac in order to scan and save.",
+            "If you try to use the control panel on the printer to scan things it will tell you that you have to have an HP smart account, but you can still scan from the computer printer icon.Other than HP's insistence on trying to get you to create an account on their app to use a printer, the printer itself works very well."
+        ],
+        "18": [
+            "But sorry, most times auto shipping of things charges your account sooner than necessary and I don't want that (e.g.",
+            "I reminded the agent that it was to be packaged in another box because otherwise the product would be exposed.",
+            "I received a refund, which of course Amazon said that if they refund the money to your Amazon account (instead of your bank card), you get it quickly."
+        ],
+        "19": [
+            "My gosh!",
+            "but SIX times!",
+            "This fixed my life!"
+        ],
+        "20": [
+            "I am SO done with this POS.",
+            "I am so disappointed.",
+            "I am so upset and disappointed."
+        ],
+        "21": [
+            "I print 100 to 200 pages a month, which makes this perfect for me.",
+            "HP suggests you can print 315 pages with their standard color cartridges but I've only printed 58 color pages so far.",
+            "Making a quilt and using coloring books I went through a lot of paper, resizing and messing up as, for me, problems in learning how to work it, not like old one.So, I used over 200 pages in that month and next month probably the same."
+        ],
+        "22": [
+            "The touch screen is adequate but it would be nicer if the icons were larger and in color.",
+            "The touch screen is clumsy as well, hard to scroll down to more options on the screen without selecting the wrong thing.",
+            "The touch screen is nice ."
+        ],
+        "23": [
+            "This is not the greatest printer I have ever had, but it was inexpensive, and after difficulties setting it up (which required a call for technical help from HP), it works.",
+            "But what I mean by works great when it works, because when my printer goes into sleep mode it take a while to get it to pick up when I want to print.",
+            "worked well for 3 months than when I got new ink it still worked but one day it decided the ink was not original and stopped working  with no warning .looses the WIFI and I had to set it up all over again ."
+        ],
+        "24": [
+            "This one from amazon on the other hand has been nothing but a constant let down.",
+            "Bought this one from Amazon because not only was it a great price but it also has features that I liked.",
+            "Some of these models may perform well and others do not perform, hold up or meet consumer expectations."
+        ],
+        "25": [
+            "This is very frustrating to me.",
+            "All around a very frustrating experience.",
+            "Very frustrating."
+        ],
+        "26": [
+            "I do not recommend this printer.",
+            "I DO NOT RECOMMEND THIS PRINTER",
+            "I do not recommend this printer."
+        ],
+        "27": [
+            "When a printer is sold as a fax on its capabilities it should be able to fax as my past multi-function printers",
+            "I couldn't not receive fax but couldn't receive fax.",
+            "Key features (scan & fax) we\u2019re locked out by \u201cinstaller\u201d\u2026which translates to \u201cthe factory\u201dHave set up countless printers in my years, but this one was the most frustrating, not because of complex processes, but because of limitations on what the printer would\/could do."
+        ],
+        "28": [
+            "The parts are flimsy, don't fit well, and overall, the lack of quality is appalling.",
+            "If I had known it was going to be so flimsy, I would have paid more for a different brand.",
+            "I accidentally dropped onto a wooden floor from about 4ft and it just bounced, no parts fell off or cracked."
+        ],
+        "29": [
+            "I had to rate this 1 star but would rate is NO STARS if that was an option.",
+            "Quality of the printing, I would give it 6 stars over just 5 stars.",
+            "The only reason I didn't give 5 stars is because the print speed is a bit on the slow side, but that may be associated with the quiet mode setting I use."
+        ],
+        "30": [
+            "I cleared the jams ever single time.. and the next sheet would jam.",
+            "However, immediately got a paper jam & corner was still folding on what sheets did make it out.",
+            "Every single time.. paper jam, \"please check printer and remove jam\" over and over and over.."
+        ],
+        "31": [
+            "It does everything I need in my small home office area.",
+            "I work @ home so it\u2019s a great addition to my \u00ab\u00a0home office !",
+            "I added it to my home office."
+        ],
+        "32": [
+            "Nothing but issues from day one.",
+            "Most of the problems stem from the fact that it has no panel (never again).",
+            "Read the reviews about problems others had, but had no problems at all."
+        ],
+        "33": [
+            "I thought it was cool to be able to print from my phone.",
+            "Can print from the computer and HP Smart on my phone.",
+            "I can only print from my phone."
+        ],
+        "34": [
+            "Hoping to saving someone money and a headache.",
+            "Cuz I just have money laying around for this.",
+            "They cost a little more upfront but are so worth it."
+        ],
+        "35": [
+            "I hate that all the new expensive printers these days have the paper sticking up from the back open to the elements.",
+            "Worst printer I have ever owned or used.",
+            "This is the worst printer I have ever owned."
+        ],
+        "36": [
+            "I had to buy the black ink one month after purchase, and a few days later now i noticed all the other ink cartridges are low as well.",
+            "I had to order new ink, which was NOT automatically shipped when the ink was low, wait until it arrived, and then discovered that the printer still didn't work.",
+            "On top of that, the 'new' cartridges came nearly empty and I had to replace all of them after about 10 small print jobs."
+        ],
+        "37": [
+            "I have started at the small notary business and don\u2019t have the money for one of the higher and laser printers just yet.",
+            "My husband and I work from home and needed an inexpensive printer that had multiple functions and printed high quality.",
+            "The overhanded big brother approach was very unnerving with constant connectivity required.I just wanted a printer\/scanner\/copier that I could use for kids school work and home office work without a company keeping tabs on the number of pages I'm printing or the kind of ink I use - and continuously charging my account."
+        ],
+        "38": [
+            "Works ok with Apple Ipad and Iphone11 (air print) which was my original intention.",
+            "I am extremely disappointed by this as this is a great printer with good, updated technology, so now I will have to restart the process for finding a printer that works with Apple products\u2026",
+            "After doing that, my phone automatically recognized it through air print on iPhone and my Mac automatically recognized it when going to printers and pressing add printer."
+        ],
+        "39": [
+            "Otherwise, you are going to have to push really hard with your finger.But, the one thing that was very frustrating for me was printing envelopes within Word.",
+            "If you experience problems with printing envelopes I would recommend contacting HP customer service  I do want to say I had contact with 2 HP customer service reps. & both were very congenial to work with me.",
+            "When printing envelopes the lettering was wavy & not clear which made for hard recognition of some letters and I even modified the paper size for the envelope size so that is not the reason for the poor print quality on envelopes."
+        ],
+        "40": [
+            "He also said that he couldn't fix the printer without it.",
+            "We had to carefully pick and choose what devices get to print and which ones don\u2019t.",
+            "Just so you know this was the case with most of the printers I looked at by a number of different makers."
+        ]
+    }
+}

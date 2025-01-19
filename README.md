@@ -3,6 +3,15 @@
 
  This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception.
 
+## 📖 Table of Contents
+* [⛏️ Scraping Amazon Reviews](#1)
+* [🧹 Reviews Text Extractor](#2)
+* [📈 Visualizing the ratings trend over time](#3)
+* [☁️ Plotting Word Clouds](#4)
+* [🔥 Topic Modeling with BERTopic](#5)
+* [😮 Sentiment analysis with TextBlob](#6)
+
+<a id="1"></a>
 ## ⛏️ Scraping Amazon Reviews
 The [`scraper.ipynb`](1-etl/1-scraper.ipynb) notebook is used to scrape reviews of a product on Amazon.
 
@@ -21,12 +30,14 @@ With a given filter configuration, Amazon limits the number of pages to $10. So 
 > [!IMPORTANT]
 > Amazon requires the user to be logged to view the reviews dedicated page. Therefore, you need to login with your browser and export your cookies, as a JSON file in the `/1-etl` directory. I used [*Cookie-Editor*](https://cookie-editor.com/) to do so.
 
+<a id="2"></a>
 ## 🧹 Reviews Text Extractor
 The [`cleaner.ipynb`](1-etl/2-cleaner.ipynb) notebook is used downstream to the scraping algorithm to extract the text of the reviews from the `html` bodies. Using the handy *BeautifulSoup* library, the `HTML` bodies are parsed and the 10 reviews are extracted from each page. For each review sample, we store the title, the content, and the stars.
 
 > [!NOTE]
 > As previously noted, this operation is highly dependant from the Amazon HTML page code, which surely will change over time. Currently the pertinent fields are retrieved using the class of the parent of the `<span>` tag that contains the text.
 
+<a id="3"></a>
 ## 📈 Visualizing the ratings trend over time
 The [`ratings_over_time.ipynb`](2-data_visualization/1-ratings_over_time.ipynb) notebook is used to visualize the dataset of ratings by plotting them month by month and showing the distribution of stars, i.e. the level of polarization of customers, over time.
 
@@ -42,6 +53,7 @@ When we stack the bars, we see that the polarization of reviews increases over t
     <img width="600rem" src="img/stars_distro.png"></img>
 </p>
 
+<a id="4"></a>
 ## ☁️ Plotting Word Clouds
 The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook aims to show the most common words in both the titles and the content of the reviews. First, we analyze the 5-star reviews to identify the aspects that customers appreciate the most. Then the same process is repeated for the 1-star reviews.
 
@@ -60,6 +72,7 @@ The most frequent words in the 5-star reviews are *easy, quality, price, new, in
 
 The most frequent words in the 1-star reviews are *ink, cartridges, waste, scam, disconnects, paper, setup, subscription, wifi, support* and *app*.
 
+<a id="5"></a>
 ## 🔥 Topic Modeling with [BERTopic](https://github.com/MaartenGr/BERTopic)
 The [`topic_modeling.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook performs the Topic Modeling task using BERTopic. The 500 collected reviews are clustered into semantically similar groups. From these clusters, topics are extracted and a probability distribution over the topics is calculated on the basis of the distances between the groups.
 
@@ -219,4 +232,12 @@ The following two-dimensional map shows the final clustering analysis. In the in
 </p>
 <p align="center">
     <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+</p>
+
+<a id="6"></a>
+## 😮 Sentiment analysis with [TextBlob](https://textblob.readthedocs.io/en/dev/)
+The [`sentiment_analysis.ipynb`](4-sentiment_analysis/sentiment_analysis.ipynb) notebook organizes the previously found topics in a polarity x subjectivity matrix. To obtain these values, the representative documents in each topic are analyzed and the results are averaged.
+
+<p align="center">
+    <img width="850rem" src="img/sentiment_analysis.png"></img>
 </p>
