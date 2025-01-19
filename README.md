@@ -33,28 +33,28 @@ The [`ratings_over_time.ipynb`](2-data_visualization/1-ratings_over_time.ipynb) 
 From the monthly ratings plot, we can see that there are two peaks in the number of reviews in the months of January and December 2024. However, this doesn't necessarily mean that sales were particularly high during these periods, since the scraping process selected only the most relevant reviews, regardless of time uniformity.
 
 <p align="center">
-    <img width="575rem" src="img/monthly_ratings.png"></img>
+    <img width="600rem" src="img/monthly_ratings.png"></img>
 </p>
 
 When we stack the bars, we see that the polarization of reviews increases over time. This means that customers are strongly disagreeing with each other.
 
 <p align="center">
-    <img width="575rem" src="img/stars_distro.png"></img>
+    <img width="600rem" src="img/stars_distro.png"></img>
 </p>
 
 ## ☁️ Plotting Word Clouds
 The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook aims to show the most common words in both the titles and the content of the reviews. First, we analyze the 5-star reviews to identify the aspects that customers appreciate the most. Then the same process is repeated for the 1-star reviews.
 
-This serves as a preamble to the subsequent Topic Modeling analysis.
+This serves zas a preamble to the subsequent Topic Modeling analysis.
 
 <p align="center">
-    <img width="575rem" src="img/5-star_cloud.png"></img>
+    <img width="565rem" src="img/5-star_cloud.png"></img>
 </p>
 
 The most frequent words in the 5-star reviews are *easy, quality, price, new, in-time* and *office*
 
 <p align="center">
-    <img width="575rem" src="img/1-star_cloud.png"></img>
+    <img width="565rem" src="img/1-star_cloud.png"></img>
 </p>
 
 
@@ -80,7 +80,7 @@ The documents in the corpus — in our case, the 500 reviews — are encoded int
 One thing we should be aware of is the *Max Sequence Length* model attribute. If we have documents that are too long, the content will be truncated and potentially useful information will be lost. **So we can either split the documents into smaller documents** — That's what we did here — **or choose a larger model**.
 
 > [!TIP]
-> For my experience, I strongly recommend splitting large documents into sentences using a tokenizer such as `sent_tokenize` from `nltk`. This also has the advantage of naturally assigning multiple topics to a large document.
+> In my experience, I strongly recommend splitting large documents into sentences using a tokenizer such as `sent_tokenize` from `nltk`. This also has the advantage of naturally assigning multiple topics to a large document.
 
 Another aspect to take into account is the language. If our corpus contains a lot a significant amount of words or even entire documents in a non-english language, we should use a multi-lingual model, like [`paraphrase-multilingual-mpnet-base-v2`](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2). However, this is not the case in this project because we scraped the reviews from Amazon US.
 
@@ -137,12 +137,86 @@ Before feeding the 500 collected reviews into *BERTopic*, we should consider a f
     <img width="700rem" src="img/length_distribution.png"></img>
 </p>
 
-- **Some of the reviews are outliers**. In the datasets there were a few amount of reviews that were removed. As shown in the previous figure, 14 reviews are shorter than 20 characters and were safely removed. In addition, there was one Spanish review that caused the BERTopic model to define a cluster just for it, since an English-only tokenizer was chosen.
+- **Some of the reviews are outliers**. In the datasets there were a few amount of reviews that were removed. As shown in the previous figure, 14 reviews are shorter than 20 characters and were safely removed. In addition, there was a Spanish review that caused the BERTopic model to define a cluster just for that review, since an English-only tokenizer was chosen.
+
+The obtained model is [`model.bertopic`](/3-topic_modeling/model.bertopic). It is the result of several attempts with multiple hyperparameter configurations. As the documentation states, BERTs is stochastic, so running the code multiple times may produce different results.
+
+>[!TIP]
+>It is highly recommended to use the GPU if available. Both the embedding phase with the SBERT model and the fitting of the BERTopic were dramatically faster with my *RTX 3070*. You can use `torch.cuda.is_available()` to check the availability of the CUDA toolkit.
 
 ### Post-processing
+BERTopic extracted 54 topics plus one "outlier" topic. The latter is conventionally assigned id -1 and is the result of all sentences that *HDBSCAN* could not classify as either core or boundary.
+
 #### Merging similiar topics
+Some of the 54 topics can be merged because they are semantically very close sentences. The merging decision can be seen in [`raw_topics.txt`].(/3-topic_modeling/raw_topics.txt).
+
+The `BERTopic`'s `merge_topics` method was thus called accordingly. This method also requires the training corpus, because once two topics have been merged, the *c-TF-IDF* score must be recomputed because the *meta-document* has changed.
+
+This results in the 54 topics being reduced to 40. The post-processed model is [`model_postprocessed.bertopic`](/3-topic_modeling/model_postprocessed.bertopic).
+
 #### Naming the topics
+For the sake of clarity, the remaining 40 topics have been assigned custom labels. The interpretation was on the basis of the extracted n-grams and the most relevant sentences in the cluster.
+
+<p align="center">
+    <img width="1200rem" src="img/topics.png"></img>
+</p>
+<p align="center">
+    <a href="3-topic_modeling/topics.html"><b>➡️ Interactive version</b></a>
+</p>
+
 
 ### The results
+The final results are shown in the following map.
+
+<p align="center">
+    <img width="550rem" src="img/intertopic_map.png"></img>
+</p>
+<p align="center">
+    <a align="center" href="3-topic_modeling/intertopic_map.html"><b>➡️ Interactive version</b></a>
+</p>
+
+For visualization, the 10 UMAP dimensions are further collapsed into 2 axes. This results in some of the topics overlapping. However, we can clearly see that semantically distant topics reside on distant islands.
+
+The following matrix, shows the correlation between each pair of topics. The distance between topics is not uniform. For example, the topics "ink and cartridge" and "low cartridge" have a correlation value greater than 0.8, as one might expect.
+
+<p align="center">
+    <img width="700rem" src="img/similiarity_matrix.png"></img>
+</p>
+<p align="center">
+    <a align="center" href="3-topic_modeling/similiarity_matrix.html"><b>➡️ Interactive version</b></a>
+</p>
+
 #### Calculating the topic distribution
+If we select a particular sentece, we can display the probability distribution over the topics. Consider the following document.
+
+> Once again I am unable to print anything. It is very hard to take customer service reps and their supervisors seriously when they contradict themselves don't listen to you and don't execute on their promises. In general, I think they have a serious attitude problem in customer service.
+
+We can see that the customer has had a difficult time with HP customer service. So it come to no surprise that the topic with greater confidence is "customer service".
+
+<p align="center">
+    <img width="700rem" src="img/topic_distro.png"></img>
+</p>
+<p align="center">
+    <a align="center" href="3-topic_modeling/sample_topic_distro.html"><b>➡️ Interactive version</b></a>
+</p>
+
+However, one might wonder which part of the sentence contributed the most to determining the probabilities of the topics.
+
+The `approximate_distribution` method uses a sliding window to estimate the similiarity of each token, and its neighbourood, with each topic.
+
+<p align="center">
+    <img width="700rem" src="img/sliding_window.png"></img>
+</p>
+<p align="center">
+    <a align="center" href="3-topic_modeling/sliding_window.html"><b>➡️ Interactive version</b></a>
+</p>
+
 #### Visualizing the topics
+The following two-dimensional map shows the final clustering analysis. In the interactive version, we can move the mouse over the points to see the reviews related to a topic.
+
+<p align="center">
+    <img width="825rem" src="img/clustering.png"></img>
+</p>
+<p align="center">
+    <a align="center" href="3-topic_modeling/clustering.html"><b>➡️ Interactive version</b></a>
+</p>
