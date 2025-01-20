@@ -1,4 +1,4 @@
-# AmazonReviewsMarketTrends
+# Topic Modeling applied to Amazon reviews
 **(Data Science 5th examination project.)**
 
  This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception. Starting from a famous Amazon product — one that has a lot of reviews spanning across several years — we want to identify "hot topics" in customer reviews to understand product weaknesses and strengths.
