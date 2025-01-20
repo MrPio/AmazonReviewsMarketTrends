@@ -1,7 +1,13 @@
 # AmazonReviewsMarketTrends
 **(Data Science 5th examination project.)**
 
- This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception.
+ This project combine *sentiment analysis* and *topic modeling* to discover which aspects of a product are driving the overall customers' perception. Starting from a famous Amazon product — one that has a lot of reviews spanning across several years — we want to identify "hot topics" in customer reviews to understand product weaknesses and strengths.
+
+Furthermore, after identifying the topics, in order to enrich the final overview of the product, we will classify them according to their *positivity* and *subjectivity*.
+
+### 👉🏼 [🌐 Jump to the interactive results](https://mrpio.github.io/AmazonReviewsMarketTrends)
+
+### 👉🏼 [📕 Read the thesis](thesis.pdf)
 
 ## 📖 Table of Contents
 * [⛏️ Scraping Amazon Reviews](#1)
@@ -12,7 +18,7 @@
 * [😮 Sentiment analysis with TextBlob](#6)
 
 <a id="1"></a>
-## ⛏️ Scraping Amazon Reviews
+## ⛏️ Scraping Amazon reviews
 The [`scraper.ipynb`](1-etl/1-scraper.ipynb) notebook is used to scrape reviews of a product on Amazon.
 
 > [!CAUTION]
@@ -20,12 +26,12 @@ The [`scraper.ipynb`](1-etl/1-scraper.ipynb) notebook is used to scrape reviews 
 > By using this script, you agree that you understand these warnings and disclaimers.
 
 ### Getting the URL
-The `get_url` function returns the URL of a page containing $10$ reviews of the given product with the given number of stars. 
+The `get_url` function returns the URL of a page containing 10 reviews of the given product with the given number of stars. 
 
 > [!NOTE]
 > This script was tested to work on January 16, 2025. As you know, web scraping depends on the website, which evolves over time. In the future, `get_url` may not return the correct URL.
 
-With a given filter configuration, Amazon limits the number of pages to $10. So I decided to filter by the number of stars. If available, this script will collect 500 reviews, 100 1-star reviews, 100 2-star reviews, and so on.
+With a given filter configuration, Amazon limits the number of pages to 10. So I decided to filter by the number of stars. If available, this script will collect 500 reviews, 100 1-star reviews, 100 2-star reviews, and so on.
 
 > [!IMPORTANT]
 > Amazon requires the user to be logged to view the reviews dedicated page. Therefore, you need to login with your browser and export your cookies, as a JSON file in the `/1-etl` directory. I used [*Cookie-Editor*](https://cookie-editor.com/) to do so.
@@ -57,7 +63,7 @@ When we stack the bars, we see that the polarization of reviews increases over t
 ## ☁️ Plotting Word Clouds
 The [`word_clouds.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook aims to show the most common words in both the titles and the content of the reviews. First, we analyze the 5-star reviews to identify the aspects that customers appreciate the most. Then the same process is repeated for the 1-star reviews.
 
-This serves zas a preamble to the subsequent Topic Modeling analysis.
+This serves as a preamble to the Topic Modeling analysis that will follow.
 
 <p align="center">
     <img width="565rem" src="img/5-star_cloud.png"></img>
@@ -74,14 +80,20 @@ The most frequent words in the 1-star reviews are *ink, cartridges, waste, scam,
 
 <a id="5"></a>
 ## 🔥 Topic Modeling with [BERTopic](https://github.com/MaartenGr/BERTopic)
-The [`topic_modeling.ipynb`](2-data_visualization/2-word_clouds.ipynb) notebook performs the Topic Modeling task using BERTopic. The 500 collected reviews are clustered into semantically similar groups. From these clusters, topics are extracted and a probability distribution over the topics is calculated on the basis of the distances between the groups.
+The [`topic_modeling.ipynb`](3-topic_modeling/topic_modeling.ipynb) notebook performs the Topic Modeling task using BERTopic. The 500 collected reviews are clustered into semantically similar groups. From these clusters, topics are extracted and a probability distribution over the topics is calculated on the basis of the distances between the groups.
 
 ### How BERTopic works
-Topic Modeling is an *unsupervised* method to classify a collection of documents. The classical algorithm to solve it is LDA. LDA uses the *Bag of Words* embedding to count the frequency of words in the documents. In its base version, **LDA is not contextual aware**.
+Topic Modeling is an *unsupervised* task to classify a collection of documents. The classical algorithm to solve it is LDA. LDA uses the *Bag of Words* embedding to count the frequency of words in the documents. In its base version, **LDA is not contextual aware**.
 
 In 2016, Christopher Moody, in its paper [*Mixing Dirichlet Topic Models and Word Embeddings to Make lda2vec*](http://arxiv.org/abs/1605.02019), devised [`lda2vec`](https://github.com/cemoody/lda2vec), a tool that extends standard LDA with *Word2Vec* embedding **to capture static semantics**.
 
-In 2022, Maarten Grootendorst authored the paper [*BERTopic: Neural topic modeling with a class-based TF-IDF procedure*](https://arxiv.org/abs/2203.05794), releasing [`BERTopic`](https://github.com/MaartenGr/BERTopic). The idea behind BERTopic is to use modern BERT-like transformers instead of the less recent *Word2Vec*, *Doc2Vec* and *Bag of Words* embeddings. BERT transformers excel in capturing contextual semantic. This means that the same word, in two different contexts, with two different meanings — e.g. the "bank" that holds your money and the "bank" of a river — **is assigned to two different embedding vectors**. In the language of transformers, this is called the *attention mechanism*.
+In 2020, Dimo Angelov published the paper [*Top2Vec: Distributed Representations of Topics*](https://arxiv.org/abs/2008.09470). The paper introduces a new method that changes the prospective of the LDA probabilistic algorithm. The *Top2Vec* model basically performs clustering downstream of the common document and word semantic embedding. In its original form, however, it did not take advantage of modern transformers and was thus limited to static semantics.
+
+In 2022, Maarten Grootendorst authored the paper [*BERTopic: Neural topic modeling with a class-based TF-IDF procedure*](https://arxiv.org/abs/2203.05794), releasing [`BERTopic`](https://github.com/MaartenGr/BERTopic). The idea behind BERTopic is to use modern BERT-like transformers instead of the less recent *Word2Vec*, *Doc2Vec* and *Bag of Words* embeddings.
+
+BERT transformers excel in capturing contextual semantic. This means that the same word, in two different contexts, with two different meanings — e.g. the "bank" that holds your money and the "bank" of a river — **is assigned to two different embedding vectors**. In the language of transformers, this is called the *attention mechanism*.
+
+More specifically, Sentence Transformers, also known as *SBERT*, are what are used here. SBERT models extend the basic BERT models with the ability to embed entire documents along with their individual words.
 
 *BERTopic* defines a precise workflow, divided into 4 main phases. The `BERTopic' class adopts the CBDP philosophy: in each phase we can use one between different components.
 
@@ -160,7 +172,7 @@ The obtained model is [`model.bertopic`](/3-topic_modeling/model.bertopic). It i
 ### Post-processing
 BERTopic extracted 54 topics plus one "outlier" topic. The latter is conventionally assigned id -1 and is the result of all sentences that *HDBSCAN* could not classify as either core or boundary.
 
-#### Merging similiar topics
+#### Merging similar topics
 Some of the 54 topics can be merged because they are semantically very close sentences. The merging decision can be seen in [`raw_topics.txt`].(/3-topic_modeling/raw_topics.txt).
 
 The `BERTopic`'s `merge_topics` method was thus called accordingly. This method also requires the training corpus, because once two topics have been merged, the *c-TF-IDF* score must be recomputed because the *meta-document* has changed.
@@ -234,10 +246,25 @@ The following two-dimensional map shows the final clustering analysis. In the in
     <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
 </p>
 
+#### Why is it useful?
+This last interactive chart can save a lot of time for managers who want to improve the product. There's no need to go through all the reviews one by one; they're collected and organized according to their importance.
+
+The manager should just decide which topic seems more interesting to him. If they want to know if HP's customer service is doing its job well enough, they can take a look at the items within the respective cluster.
+
+The sentences more or less agree on the unhelpful experience they've had with the help.
+
+As for the mobile app, customers are largely satisfied, although someone is annoyed by the frequent login requests.
+
 <a id="6"></a>
 ## 😮 Sentiment analysis with [TextBlob](https://textblob.readthedocs.io/en/dev/)
 The [`sentiment_analysis.ipynb`](4-sentiment_analysis/sentiment_analysis.ipynb) notebook organizes the previously found topics in a polarity x subjectivity matrix. To obtain these values, the representative documents in each topic are analyzed and the results are averaged.
 
+To determine the sentiment of the topics, we computed the average *polarity* and *subjectivity* over all the most representative docs that BERTopic has extracted from each cluster in the `get_topic_info` method.
+
 <p align="center">
     <img width="850rem" src="img/sentiment_analysis.png"></img>
 </p>
+
+The information shown in the chart can be used togheter with what has been said above to identify the most critical aspects of the product.
+
+Once again, we see that the customer service issue receives a slightly negative average polarity, while the ability to print with the phone is generally appreciated, with an average polarity of almost 0.25.
