@@ -5,7 +5,7 @@
 
 Furthermore, after identifying the topics, in order to enrich the final overview of the product, we will classify them according to their *positivity* and *subjectivity*.
 
-### 👉🏼 [🌐 Jump to the interactive results](https://mrpio.github.io/AmazonReviewsMarketTrends)
+### 👉🏼 [🌐 Jump to the interactive results](https://mrpio.github.io/BERTopic-AmazonReviews/)
 
 ### 👉🏼 [📕 Read the thesis](thesis.pdf)
 
@@ -186,7 +186,7 @@ For the sake of clarity, the remaining 40 topics have been assigned custom label
     <img width="1200rem" src="img/topics.png"></img>
 </p>
 <p align="center">
-    <a href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 
@@ -197,7 +197,7 @@ The final results are shown in the following map.
     <img width="550rem" src="img/intertopic_map.png"></img>
 </p>
 <p align="center">
-    <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a align="center" href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 For visualization, the 10 UMAP dimensions are further collapsed into 2 axes. This results in some of the topics overlapping. However, we can clearly see that semantically distant topics reside on distant islands.
@@ -208,7 +208,7 @@ The following matrix, shows the correlation between each pair of topics. The dis
     <img width="700rem" src="img/similiarity_matrix.png"></img>
 </p>
 <p align="center">
-    <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a align="center" href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 #### Calculating the topic distribution
@@ -222,7 +222,7 @@ We can see that the customer has had a difficult time with HP customer service. 
     <img width="700rem" src="img/topic_distro.png"></img>
 </p>
 <p align="center">
-    <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a align="center" href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 However, one might wonder which part of the sentence contributed the most to determining the probabilities of the topics.
@@ -233,7 +233,7 @@ The `approximate_distribution` method uses a sliding window to estimate the simi
     <img width="700rem" src="img/sliding_window.png"></img>
 </p>
 <p align="center">
-    <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a align="center" href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 #### Visualizing the topics
@@ -243,7 +243,7 @@ The following two-dimensional map shows the final clustering analysis. In the in
     <img width="825rem" src="img/clustering.png"></img>
 </p>
 <p align="center">
-    <a align="center" href="https://mrpio.github.io/AmazonReviewsMarketTrends/"><b>➡️ Interactive version</b></a>
+    <a align="center" href="https://mrpio.github.io/BERTopic-AmazonReviews//"><b>➡️ Interactive version</b></a>
 </p>
 
 #### Why is it useful?
